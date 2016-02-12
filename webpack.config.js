@@ -14,7 +14,7 @@ module.exports = {
 
   entry: fs.readdirSync(__dirname).reduce(function (entries, dir) {
     if (fs.statSync(path.join(__dirname, dir)).isDirectory()
-      && !/^(__|.|node_modules)/.test(dir)) {
+      && !/^(__|\.|node_modules)/.test(dir)) {
       entries[dir] = path.join(__dirname, dir, 'index.js')
     }
     return entries
