@@ -9,13 +9,15 @@ var sassLoader = [
   'sass'
 ]
 
+var examplesDir = path.join(__dirname, '/examples');
+
 module.exports = {
   devtool: 'inline-source-map',
 
-  entry: fs.readdirSync(__dirname).reduce(function (entries, dir) {
-    if (fs.statSync(path.join(__dirname, dir)).isDirectory()
+  entry: fs.readdirSync(examplesDir).reduce(function (entries, dir) {
+    if (fs.statSync(path.join(examplesDir, dir)).isDirectory()
       && !/^(__|\.|node_modules)/.test(dir)) {
-      entries[dir] = path.join(__dirname, dir, 'index.js')
+      entries[dir] = path.join(examplesDir, dir, 'index.js')
     }
     return entries
   }, {}),
