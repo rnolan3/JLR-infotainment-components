@@ -1,0 +1,25 @@
+
+$white:               #fff;
+$white10:             rgba($white, .1);
+$black:               #000;
+
+$light-blue:          rgb(170, 240, 255);
+$orange:              #fe9c00;
+$orange-bg:           rgba(darken($orange, 15%), .25);
+
+$base-border-size:    4px;
+$base-border-color:   $white10;
+
+$button-border-size:  5px;
+
+$animation-fast:      150ms;
+$animation-slow:      400ms;
+
+%button {
+  border: 0;
+  color: $white;
+  font-size: 4rem;
+  padding: 3rem 4rem;
+  position: relative;
+  text-transform: uppercase;
+}
