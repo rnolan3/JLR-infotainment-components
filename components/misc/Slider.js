@@ -1,10 +1,10 @@
-import React, { Component, PropTypes } from 'react';
-import classNames from 'classnames';
+import React, { Component, PropTypes } from 'react'
+import classNames from 'classnames'
 
 const {
   String,
   Number
-} = PropTypes;
+} = PropTypes
 
 export default class Slider extends Component {
 
@@ -26,34 +26,34 @@ export default class Slider extends Component {
   };
 
   handleTouch = (event) => {
-    let offset = this.refs.slider.getBoundingClientRect();
-    let touch = event.touches.item(0);
-    let perc = (offset.bottom - touch.pageY) / offset.height;
+    let offset = this.refs.slider.getBoundingClientRect()
+    let touch = event.touches.item(0)
+    let perc = (offset.bottom - touch.pageY) / offset.height
 
     if (perc > 1) {
-      perc = 1;
+      perc = 1
     } else if (perc < 0) {
-      perc = 0;
+      perc = 0
     }
 
-    let value = perc * (this.props.max - this.props.min) + this.props.min;
+    let value = perc * (this.props.max - this.props.min) + this.props.min
 
 
-    this.setState({ perc: perc * 100, value: Math.floor(value) });
+    this.setState({ perc: perc * 100, value: Math.floor(value) })
   };
 
   render () {
-    const classes = classNames('slider', this.props.className);
+    const classes = classNames('slider', this.props.className)
     return (
-      <div className={ classes } ref="slider" onTouchStart={ this.handleTouch } onTouchMove={ this.handleTouch }>
+      <div className={ classes } onTouchMove={ this.handleTouch } onTouchStart={ this.handleTouch } ref="slider">
         <div className="slider_zone" />
         <div className="slider_bar" style={ { height: `${this.state.perc}%` } } />
         <div className="slider_handle"
           style={ { bottom: `${this.state.perc}%` } }>
-          { this.state.value }&#x00B0;
+          { this.state.value }&#x00B0
         </div>
       </div>
-    );
+    )
   }
 
 }
