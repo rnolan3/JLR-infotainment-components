@@ -9,7 +9,7 @@ var sassLoader = [
   'sass'
 ]
 
-var examplesDir = path.join(__dirname, '/examples');
+var examplesDir = path.join(__dirname, '/examples')
 
 module.exports = {
   devtool: 'inline-source-map',
