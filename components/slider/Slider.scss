@@ -9,3 +9,13 @@
   position: relative;
   width: 100px;
 }
+
+.label {
+  color: $light-blue;
+  font-size: 3rem;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: -100px;
+  transform: translateX(-50%);
+}

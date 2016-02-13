@@ -13,6 +13,7 @@ export default class Slider extends Component {
     className: PropTypes.string,
     defaultValue: PropTypes.number,
     direction: PropTypes.string,
+    label: PropTypes.string,
     max: PropTypes.number,
     min: PropTypes.number
   };
@@ -54,7 +55,7 @@ export default class Slider extends Component {
   };
 
   render () {
-    const { direction } = this.props
+    const { direction, label } = this.props
     const classes = cx({
       wrapper: true,
       sliderRight: direction === 'right',
@@ -67,6 +68,7 @@ export default class Slider extends Component {
         onTouchMove={ this.handleTouch }
         onTouchStart={ this.handleTouch }
         ref="slider">
+        <div className={ styles.label }>{ label }</div>
         <SliderRail direction={ direction } />
         <SliderBar direction={ direction } { ...this.state } />
       </div>

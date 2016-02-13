@@ -9,9 +9,11 @@ ReactDOM.render(<div>
   <Slider
     className={ styles.colLeft }
     defaultValue="12"
-    direction="left" />
+    direction="left"
+    label="L" />
   <Slider
     className={ styles.colRight }
     defaultValue="18"
-    direction="right" />
+    direction="right"
+    label="R" />
 </div>, document.getElementById('app'))
