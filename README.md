@@ -17,6 +17,7 @@ npm start
 
 ## Examples
 
+1. Fan speed control: http://0.0.0.0:8080/examples/fan-speed
+1. Heated seat button: http://0.0.0.0:8080/examples/heated-seat-button
 1. Hazard button: http://localhost:8080/examples/hazard-button
-2. Temperature control: http://localhost:8080/examples/slider
-3. Fan speed control: http://0.0.0.0:8080/examples/fan-speed
+1. Temperature control: http://localhost:8080/examples/slider
