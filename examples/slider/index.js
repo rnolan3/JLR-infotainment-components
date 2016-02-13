@@ -1,9 +1,14 @@
+/* eslint no-console: 0 */
 import React from 'react'
 import ReactDOM from 'react-dom'
 
 import Slider from '../../components/slider/Slider'
 
 import styles from './styles.scss'
+
+function consoleValue (value) {
+  console.log('slider value:', value)
+}
 
 ReactDOM.render(<div>
   <Slider
@@ -15,5 +20,6 @@ ReactDOM.render(<div>
     className={ styles.colRight }
     defaultValue="18"
     direction="right"
-    label="R" />
+    label="R"
+    onChange={ consoleValue } />
 </div>, document.getElementById('app'))
