@@ -10,4 +10,12 @@ Conceptual interface components based on [PDXostc's](https://github.com/PDXostc)
 ### Starting the dev server
 
 Run the following command in terminal window:
-```npm start```
+
+```
+npm start
+```
+
+## Examples
+
+1. Hazard button: http://localhost:8080/examples/hazard-button
+2. Temperature controls: http://localhost:8080/examples/slider
