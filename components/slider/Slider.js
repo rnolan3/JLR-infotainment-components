@@ -15,7 +15,8 @@ export default class Slider extends Component {
     direction: PropTypes.string,
     label: PropTypes.string,
     max: PropTypes.number,
-    min: PropTypes.number
+    min: PropTypes.number,
+    onChange: PropTypes.func
   };
 
   static defaultProps = {
@@ -52,6 +53,10 @@ export default class Slider extends Component {
 
   handleTouchEnd = () => {
     this.setState({ dragging: false })
+
+    if (typeof this.props.onChange === 'function') {
+      this.props.onChange(this.state.value)
+    }
   };
 
   render () {
