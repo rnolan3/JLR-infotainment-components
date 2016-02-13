@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import SliderBar from './SliderBar'
 import SliderRail from './SliderRail'
 
+import shallowCompare from 'react-addons-shallow-compare'
 import classNames from 'classnames/bind'
 import styles from './Slider.scss'
 
@@ -30,6 +31,11 @@ export default class Slider extends Component {
     value: this.props.defaultValue || this.props.min,
     perc: this.props.defaultValue ? this.props.defaultValue / this.props.max * 100 : 0
   };
+
+  shouldComponentUpdate (nextProps, nextState) {
+    return shallowCompare(this.props, nextProps) ||
+      shallowCompare(this.state, nextState)
+  }
 
   handleTouch = (event) => {
     let offset = this.refs.slider.getBoundingClientRect()
