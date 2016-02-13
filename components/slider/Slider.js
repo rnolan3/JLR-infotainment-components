@@ -12,7 +12,9 @@ export default class Slider extends Component {
 
   static propTypes = {
     className: PropTypes.string,
-    defaultValue: PropTypes.number,
+    defaultValue: PropTypes.oneOfType([
+      PropTypes.number, PropTypes.string
+    ]),
     direction: PropTypes.string,
     label: PropTypes.string,
     max: PropTypes.number,
